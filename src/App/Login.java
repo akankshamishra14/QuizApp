@@ -9,7 +9,7 @@ public class Login extends JFrame {
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/login.png"));
-        Image i = i1.getImage().getScaledInstance(550,500,Image.SCALE_DEFAULT);
+        Image i = i1.getImage().getScaledInstance(550,550,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i);
         JLabel image = new JLabel(i2);
         image.setBounds(450,0,550,500);
