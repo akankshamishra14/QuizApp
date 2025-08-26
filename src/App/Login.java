@@ -4,6 +4,9 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Login extends JFrame {
+    JTextField text;
+    JButton Next , Back;
+
     Login(){
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -14,8 +17,38 @@ public class Login extends JFrame {
         JLabel image = new JLabel(i2);
         image.setBounds(450,0,550,500);
         add(image);
+      
+         JLabel heading = new JLabel("QUIZ TEST");
+            heading.setBounds(140,60,300,45);
+            heading.setFont(new Font("Viner Hand ITC",Font.BOLD,40));
+            heading.setForeground(new Color(22,99,54));
+            add(heading);
 
+        JLabel name = new JLabel("Enter Your Name");
+        name.setBounds(160,150,300,20);
+        name.setFont(new Font("Mongolian Baiti",Font.BOLD,18));
+        name.setForeground(new Color(22,99,54));
+        add(name);
+     
+        Next = new JButton("Next");
+        Next.setBounds(100,270,120,25);
+        Next.setBackground(new Color(22,99,54));
+        Next.setForeground(Color.WHITE);
+       // Next.setFont(new Font("Times New Roman",Font.BOLD,18));
+        add(Next);
 
+        Back = new JButton("Back");
+        Back.setBounds(250,270,120,25);
+        Back.setBackground(new Color(22,99,54));
+        Back.setForeground(Color.WHITE);
+         // Back.setFont(new Font("Times New Roman",Font.BOLD,18));
+        add(Back);
+        
+        text = new JTextField();
+        text.setBounds(80,200,300,25);
+        text.setFont(new Font("Times New Roman",Font.BOLD,18));
+        add(text);
+        
        setSize(1000, 500);
        setLocation( 200, 150);
        setVisible(true);
