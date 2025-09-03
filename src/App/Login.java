@@ -1,9 +1,11 @@
 package App;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener{
     JTextField text;
     JButton Next , Back;
 
@@ -34,13 +36,15 @@ public class Login extends JFrame {
         Next.setBounds(100,270,120,25);
         Next.setBackground(new Color(22,99,54));
         Next.setForeground(Color.WHITE);
+        Next.addActionListener(this);
        // Next.setFont(new Font("Times New Roman",Font.BOLD,18));
         add(Next);
 
-        Back = new JButton("Back");
+        Back = new JButton("Exit");
         Back.setBounds(250,270,120,25);
         Back.setBackground(new Color(22,99,54));
         Back.setForeground(Color.WHITE);
+        Back.addActionListener(this);
          // Back.setFont(new Font("Times New Roman",Font.BOLD,18));
         add(Back);
         
@@ -53,7 +57,19 @@ public class Login extends JFrame {
        setLocation( 200, 150);
        setVisible(true);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) { 
+        if(e.getSource() == Next){
+
+        } else if (e.getSource() == Back) {
+            System.exit(500);
+        }
+        // TODO Auto-generated method stub
+        
+    }
     public static void main(String[] args){
         new Login();
     }
 }
+ 
