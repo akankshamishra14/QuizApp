@@ -57,19 +57,20 @@ public class Login extends JFrame implements ActionListener{
        setLocation( 200, 150);
        setVisible(true);
     }
-
+   
     @Override
-    public void actionPerformed(ActionEvent e) { 
-        if(e.getSource() == Next){
-
-        } else if (e.getSource() == Back) {
-            System.exit(500);
-        }
-        // TODO Auto-generated method stub
-        
+public void actionPerformed(ActionEvent e) { 
+    if(e.getSource() == Next){
+         setVisible(false);
+        new Rules(text.getText()); // Use text field for user input
+    } else if (e.getSource() == Back) {
+        System.exit(500);
     }
+    // TODO Auto-generated method stub
+}
     public static void main(String[] args){
         new Login();
+        
     }
 }
  

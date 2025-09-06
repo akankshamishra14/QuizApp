@@ -11,10 +11,13 @@ import javax.swing.JLabel;
 public class Rules extends JFrame implements ActionListener {
 
   JButton start,back;
+  String userName;
+  Rules(String name){
+    userName = name;
 
-  Rules(){
+    getContentPane().setBackground(Color.WHITE);
     
-JLabel heading = new JLabel("Welcome "+" to QUIZ TEST");
+JLabel heading = new JLabel("Welcome "+ name+" to QUIZ TEST");
 heading.setBounds(150,100,700,30);
 heading.setFont(new Font("viner Hand ITC",Font.BOLD,28));
 heading.setForeground (new Color (22,99,54));
@@ -26,9 +29,9 @@ rules.setFont(new Font("Tahoma",Font.PLAIN,16));
 rules.setForeground (new Color (22,99,54));
 rules.setText(
   "<html>"+
-  "1. Participation in the Quiz is free and open to all (18+)." + "<br><br>" +
+  "1. Participation in the Quiz is free and open to all." + "<br><br>" +
   "2. There are total 10 questions." + "<br><br>" +
-  "3. You will get 15 seconds to answer each question." + "<br><br>" +
+  "3. You will get 5 minutes to answer Quiz question." + "<br><br>" +
   "4. No electronic device is allowed." + "<br><br>" +
   "5. No talking." + "<br><br>" +
     "<div style='margin-left:140px;'>Best of Luck" + "<br><br><br>" +
@@ -67,18 +70,14 @@ add(rules);
   }
 
   @Override
-  public void actionPerformed(ActionEvent e) {
-    if (e.getSource()== start){
-
-    }else{
-      setVisible(false);
-      new Login();
+public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == start) {
+        setVisible(false);
+        new Quiz(userName); // Start the quiz when Start button is clicked
+    } else if (e.getSource() == back) {
+        setVisible(false);
+        new Login();
     }
-    // TODO Auto-generated method stub
-    
-  }
-  public static void main(String[] args) {
-    new Rules();
-  }
+}
 
 }
